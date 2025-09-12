@@ -1,0 +1,189 @@
+* {
+    margin: 0;  /*tira a margem*/
+    padding: 0; /*distancia do conteúdo da borda.*/
+    box-sizing: border-box;
+}
+
+.logo-mario {
+    height: 200px;  /*altura*/
+    margin-bottom: 10px;
+}
+button {
+    color: white;  /*cor do texto*/
+    background-color: #c51111; /*cor do fundo*/
+    border-radius: 3px;  /*deixar a borda aredondada*/
+    border: none; /*sem borda = none*/
+    width: 200px; /*largura do item*/
+    height: 50px; /*altura do item*/
+    cursor: pointer; /*seta do mouse com interação com botão*/
+    text-transform: uppercase; /*deixa texto em maiúsculo*/
+    font-weight: bold;  /*deixa em negrito*/
+    margin-top: 30px;  /*margem na parte de cima para separar*/
+}
+
+button:hover {
+    background-color: white;
+    color: red;
+    font-size: 15px;
+    transition: 0.5s ease-in-out;  
+}
+
+.logo-person {
+    height: 500px;
+}
+
+body {
+    height: 100vh;
+}
+
+.caixa-mae {
+    display: flex; /*formata a página com as informações um do lado do outro*/
+    align-items: center; /*alinhamento dos itens na vertical = no centro*/
+    justify-content:space-around;  /*alinhamento na horizontal, determina que eu quero somente criar um espaço entre os itens*/
+    padding: 100px;
+    height: 100vh;
+}
+
+.sobre-nos {
+    width: 40%;
+    color:white;
+
+}
+
+.caixa-video {
+    position: fixed;  /*quero que meu vídeo fique fixado idependente do movimento da pagina*/
+    top: 0; /*posiciona o vídeo em cima*/
+    z-index: -1;  /*posicionamento atras dos itens da pagina*/
+}
+
+video {
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.mascara {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+    position: fixed;
+    top: 0;
+}
+
+.link-whatsapp img {
+    height: 60px;
+    position: fixed;
+    right: 20px;  /*coloca item todo para a direita porem 20 px de distancia da margm*/
+    bottom: 20px; /*coloca item toda na parte de baixo porem 20 px de distamcia da margem de baixo*/
+}
+
+.header {
+    display: flex; 
+    align-items: center; /*alinhando os itens ao centro*/
+    gap: 30px;  /*distanciamento entre os itens*/
+    margin: 30px;
+}
+.header img {
+    height: 80px;
+}
+
+.header a {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.header a:hover { /*---> função para que ocorra quando o mouse passar emcima dos itens*/
+    color: #c51111;
+    font-size: 35px;
+    transition: 0.5s ease-in-out;  /*tempo para que o efeito ocorra, aonde ocorra, e se é na entrada ou saída do mouse ou dos dois*/
+}
+
+.formulario-fale-conosco {
+    background-color: white;
+    display: flex;
+    gap: 20px;  /*distancia um item do outro*/
+    flex-direction: column; /*deixar os itens em coluna*/
+    position: fixed;
+    top: 30%;
+    left: -280px;  
+    padding: 20px; /*para que os itens não fiquem grudados na caixa*/
+    border-radius: 5px; /*borda arredondada*/
+    transition: left 1s ease-in-out;
+}
+
+input {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gray;  /*estilizando a borda de cada informação*/
+    padding-left: 10px;
+    outline-color: #18d80f;  /*cor da borda quando clica para colocar infos*/
+}
+
+textarea {
+    width: 250px;
+    height: 100px;
+    border-radius: 5px;
+    border: 1px solid gray;  /*estilizando a borda de cada informação*/
+    padding-left: 10px;
+    outline-color: #18d80f;  /*cor da borda quando clica para colocar infos*/
+}
+
+.mascara-formulario {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    width: 100vw; /*vw, para ocupar a tela toda*/
+    height: 100vh;
+    transition: visibility 1s ease-in-out;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+} 
+
+/*aonde vai começar meu formulário
+
+
+left: -250px;
+
+O FINAL
+
+left: 50%;
+transforme: translateX(-50%);
+*/
+
+@media(max-width: 1100px) {
+
+    p {
+    display: none;
+}
+
+    .caixa-mae {
+        flex-direction: column;
+    }
+
+    .sobre-nos {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .logo-person {
+        width: 80vw;
+        height: auto;
+    }
+
+    .header {
+        margin: 10px;
+    }
+}
+
+    .header img {
+    display: none;
+}
+
+    .header a {
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
